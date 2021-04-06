@@ -2,7 +2,7 @@
 
 Este programa está hecho en `C#` y tiene la función de mostrar ciertos menús, además de agregar nombres de estudiantes (con tres notas), buscar y listar estudiantes, con la opción de guardar la información en un archivo `xml` (también es posible cargar ese archivo).
 
-Este programa fue hecho en .NET 5.0, así que si se está usando otra versión de .NET, sólo hay que cambiar un línea de código en el archivo `SolNotas.csproj` para que compile sin problemas. El contenido de este archivo es:
+Este programa fue hecho en .NET 5.0, así que si se está usando otra versión de .NET, sólo hay que cambiar una línea de código en el archivo `SolNotas.csproj` para que compile sin problemas. El contenido de este archivo es:
 
 ```C#
 <Project Sdk="Microsoft.NET.Sdk">
