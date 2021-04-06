@@ -2,7 +2,7 @@
 
 Este programa está hecho en `C#` y tiene la función de conectarse a una base de datos creada en MySQL para manipular los datos que están almacenados ahí. Dicha base de datos tiene información sencilla (estudiantes, correos, notas) y este programa pregunta si desea añadir estudiantes a esa base, listar los estudiantes, editar la información de los estudiantes o borrar la información si se desea. El archivo para crear la base de datos se llama `crear_taller_estudiantes.sql`.
 
-Este programa fue hecho en .NET 5.0, así que si se está usando otra versión de .NET, sólo hay que cambiar un línea de código en el archivo `SolNotas.csproj` para que compile sin problemas. El contenido de este archivo es:
+Este programa fue hecho en .NET 5.0, así que si se está usando otra versión de .NET, sólo hay que cambiar una línea de código en el archivo `SolNotas.csproj` para que compile sin problemas. El contenido de este archivo es:
 
 ```C#
 <Project Sdk="Microsoft.NET.Sdk">
