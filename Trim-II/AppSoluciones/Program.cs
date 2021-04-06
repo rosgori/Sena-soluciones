@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Numerics;
 
 namespace AppSoluciones
 {
@@ -436,11 +437,11 @@ namespace AppSoluciones
             }
 
 
-            Int64 [] arreglo_num = new Int64 [numero];
+            BigInteger [] arreglo_num = new BigInteger [numero];
 
-            Int64 i_0 = 0;
-            Int64 i_1 = 1;
-            Int64 temp;
+            BigInteger i_0 = 0;
+            BigInteger i_1 = 1;
+            BigInteger temp;
 
             arreglo_num[0] = i_0;
             arreglo_num[1] = i_1 ;
@@ -453,7 +454,7 @@ namespace AppSoluciones
 
             Console.WriteLine($"\nLos primeros {entrada} números de la serie de Fibonacci son: \n");
 
-            foreach (long j in arreglo_num)
+            foreach (BigInteger j in arreglo_num)
             {
                 Console.WriteLine(j);
             }
@@ -466,7 +467,7 @@ namespace AppSoluciones
             decimal num;
 
             Console.Clear();
-            Console.WriteLine("Este algoritmo muestra el monto de parafiscales que un empleado"
+            Console.WriteLine("Este algoritmo muestra el monto de parafiscales que un empleado "
             + "independiente tiene que pagar.\n");
 
             Console.WriteLine("Digite el salario: \n");
