@@ -133,7 +133,7 @@ namespace SolNotasBD
 
             Marcos.EscribirEn("AGREGANDO ESTUDIANTE", 40, 7);
 
-            // Para el código
+            // Para insertar el código
             do
             {
                 Marcos.EscribirEn("Digite el código del estudiante: ", 10, 11);
@@ -396,7 +396,7 @@ namespace SolNotasBD
                     }
                     else
                     {
-                        Marcos.BorrarLinea(10, 60, 11);
+                        Marcos.BorrarLinea(10, 139, 7);
                         // Para borrar la línea dentro marco pequeño
                         Marcos.BorrarLinea(30, 70, 36);
                         MarcoPequeño();
@@ -405,7 +405,7 @@ namespace SolNotasBD
                 }
                 else
                 {
-                    Marcos.BorrarLinea(10, 60, 11);
+                    Marcos.BorrarLinea(10, 139, 7);
                     // Para borrar la línea dentro marco pequeño
                     Marcos.BorrarLinea(30, 70, 36);
                     MarcoPequeño();
