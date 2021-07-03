@@ -33,11 +33,10 @@
 
             <div>
                 <select asp-for="Rol" class="form-select">
-                    <option selected>Seleccione el rol</option>
-                    @foreach (var rol in nLista)
-                    {
-                        <option value="@rol.Rol">@rol.Rol</option>
-                    }
+                    <label>Seleccione el rol</label>
+                    <option name="nacional"> nacional </option>
+                    <option name="extranjero"> extranjero </option>
+
                 </select>
             </div>
 

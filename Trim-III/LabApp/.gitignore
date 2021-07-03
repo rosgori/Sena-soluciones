@@ -1,0 +1,9 @@
+# Ignora las siguientes carpetas
+
+.vscode/
+obj/
+bin/
+
+# Ignora los siguientes archivos
+
+Models/lab_mundoContext.cs
