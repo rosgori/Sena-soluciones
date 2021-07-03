@@ -95,3 +95,25 @@ Para las vistas es así:
 
 ## **Acceso a datos**
 
+Para acceder a datos es necesario primero crear una base de datos, el archivo `creacion-lab-mundo.sql` permite hacer eso. Después hay que añadir un paquete que ayude a hacer la conexión a a la base de datos, aquí entra Pomelo. Después es necesario instalar varios paquetes (como se ve en `LabApp.csproj`) para poder importar la base; otra forma de verlo es usar el comando `dotnet list package`, cuyo resultado es:
+
+```bash
+El proyecto "LabApp" tiene las referencias de paquete siguientes
+   [net5.0]: 
+   Paquete de nivel superior                                   Solicitado   Resuelto
+   > Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore      5.0.7        5.0.7   
+   > Microsoft.EntityFrameworkCore                             5.0.7        5.0.7   
+   > Microsoft.EntityFrameworkCore.Design                      5.0.7        5.0.7   
+   > Microsoft.EntityFrameworkCore.Tools                       5.0.7        5.0.7   
+   > Microsoft.VisualStudio.Web.CodeGeneration.Design          5.0.2        5.0.2   
+   > Pomelo.EntityFrameworkCore.MySql                          5.0.1        5.0.1   
+   > X.PagedList                                               8.0.7        8.0.7   
+   > X.PagedList.Mvc.Core                                      8.0.7        8.0.7
+```
+
+Claramente no todos tiene esa finalidad, los dos últimos son para mostrar un lista entre varias páginas. Luego se usa el siguiente comando para importar todas las tablas:
+
+```bash
+dotnet ef dbcontext scaffold "Server=localhost;Database=lab_mundo;User=miusuario;Password=micontraseña" "Pomelo.EntityFrameworkCore.MySql" -o Models
+```
+
