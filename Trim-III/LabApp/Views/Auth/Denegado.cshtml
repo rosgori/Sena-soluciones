@@ -1,0 +1,34 @@
+@using System.Net;
+@model LabApp.Models.Empleado
+
+@{
+    ViewData["Title"] = "Denegado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @* var returnUrl = ViewData["ReturnUrl"] as string;
+    var error = TempData["Error"] as string; *@
+}
+<!--  Aquí el contenido del cuerpo principal -->
+
+<h2>Información privada</h2>
+
+<section>
+    <div>
+        <h3>Usuario @User.Identity.Name no tiene permisos para la tarea que quiso hacer.</h3>
+
+        <p class="estiloTextos">
+            <ol>
+                @foreach (var c in User.Claims)
+            {
+                <li> @c.Type: @c.Value </li>   
+            }
+            </ol>
+            
+        </p>
+    </div>
+
+    <div class="contenedor50">
+        <div class="contenedorImgPrincipal">
+            <img class="ImgPrincipal" src="~/images/organigrama.jpeg" alt="" />
+        </div>
+    </div>
+</section>

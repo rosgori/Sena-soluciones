@@ -1,0 +1,32 @@
+@using System.Net;
+@model LabApp.Models.Empleado
+
+@{
+    ViewData["Title"] = "Cuenta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @* var returnUrl = ViewData["ReturnUrl"] as string; *@
+    @* var error = TempData["Error"] as string; *@
+}
+<!--  Aquí el contenido del cuerpo principal -->
+
+<h2>Información privada</h2>
+
+
+<section>
+    <div>
+        <h3>Información de su cuenta</h3>
+
+        <p>
+            Bienvenido @User.Identity.Name. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+            incidunt maxime provident nobis? Dolores perferendis, quisquam
+            temporibus vitae quos magni quis. Nisi tenetur numquam consequatur
+            qui consequuntur facere, saepe itaque!
+        </p>
+    </div>
+
+    <div class="contenedor50">
+        <div class="contenedorImgPrincipal">
+            <img class="ImgPrincipal" src="~/images/organigrama.jpeg" alt="" />
+        </div>
+    </div>
+</section>

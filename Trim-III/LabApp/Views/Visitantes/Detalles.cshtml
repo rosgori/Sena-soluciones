@@ -1,0 +1,35 @@
+@model LabApp.Models.Visitante
+
+@{
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--  Aquí el contenido del cuerpo principal -->
+<div>
+    <h3>Detalles del visitante</h3>
+
+    <div>
+        <a asp-action="Index"> Volver a la lista </a>
+    </div>
+
+
+    <div>
+        <div>
+            Código : @Model.Codigo
+        </div>
+
+        <div>
+            Nombre: @Model.Nombre
+        </div>
+
+        <div>
+            Correo: @Model.Correo
+        </div>
+
+        <div>
+            @Html.ActionLink("Editar", "Editar", new {id = Model.Codigo})
+            @Html.ActionLink("Borrar", "Borrar", new {id = Model.Codigo})
+        </div>
+
+    </div>
+</div>

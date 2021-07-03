@@ -1,0 +1,49 @@
+@model LabApp.Models.Visitante
+
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Role> nLista = ViewBag.Roles;
+}
+<!--  Aquí el contenido del cuerpo principal -->
+<div>
+    <h3>Añadir visitante</h3>
+
+    <div>
+        <a asp-action="Index"> Volver a la lista </a>
+    </div>
+
+    <div>
+        <form asp-action="Crear">
+            <div>
+                <label asp-for="Codigo" class="control-label"> </label>
+                <input asp-for="Codigo" class="form-control" required placeholder="1013" />
+                <span class="text-danger"> @ViewData["msj"] </span>
+            </div>
+
+            <div>
+                <label asp-for="Nombre" class="control-label"> </label>
+                <input asp-for="Nombre" class="form-control" required placeholder="Juan Dávila" />
+            </div>
+
+            <div>
+                <label asp-for="Correo" class="control-label"> </label>
+                <input asp-for="Correo" type="email" class="form-control" required placeholder="juanda@gmail.com" />
+            </div>
+
+            <div>
+                <select asp-for="Rol" class="form-select">
+                    <option selected>Seleccione el rol</option>
+                    @foreach (var rol in nLista)
+                    {
+                        <option value="@rol.Rol">@rol.Rol</option>
+                    }
+                </select>
+            </div>
+
+            <input type="submit" class="estiloBtn" value="Guardar" />
+        </form>
+
+
+    </div>
+</div>

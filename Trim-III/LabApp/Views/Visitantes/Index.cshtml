@@ -1,0 +1,81 @@
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@model IEnumerable<LabApp.Models.Visitante>;
+
+@{
+    ViewData["Title"] = "Índice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lista de visitantes";
+}
+<!--  Aquí el contenido del cuerpo principal -->
+<h3>Lista de visitantes</h3>
+
+<div>
+    <div>
+        <div>
+            <a asp-action="Crear"> Agregar nuevo </a>
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Código </th>
+                        <th> Nombre </th>
+                        <th> Correo </th>
+                        <th> Rol </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var visitante in Model)
+                    {
+                        <tr>
+                            <td> @visitante.Codigo </td>
+                            <td> @visitante.Nombre </td>
+                            <td> @visitante.Correo </td>
+                            <td> @visitante.Rol </td>
+
+                            <td>
+                                @if (User.IsInRole("administrador") || User.IsInRole("cientifico"))
+                                {
+                                    @Html.ActionLink("Editar", "Editar", new {id = visitante.Codigo})
+                                }
+
+                                @Html.ActionLink("Detalles", "Detalles", new {id = visitante.Codigo})
+
+                                @if (User.IsInRole("administrador"))
+                                {
+                                    @Html.ActionLink("Borrar", "Borrar", new {id = visitante.Codigo})
+                                }
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page}),
+            new X.PagedList.Mvc.Core.Common.PagedListRenderOptions
+            {
+                @* DisplayItemSliceAndTotal = true, *@
+            ContainerDivClasses = new [] {"navigation"},
+            LiElementClasses = new[] { "page-item" },
+            PageClasses = new[] { "page-link" },
+            })
+
+            @section Scripts {
+            <script>
+                $(document).ready(fuction() {
+                    $(ul.pagination > li.disabled > a).addClass('page - link');
+                });
+            </script>
+            }
+
+        </div>
+
+
+    </div>
+
+</div>

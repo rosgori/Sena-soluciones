@@ -1,0 +1,43 @@
+@model LabApp.Models.Visitante;
+
+@{
+    ViewData["Title"] = "Borrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Role> nLista = ViewBag.Roles;
+}
+<!--  Aquí el contenido del cuerpo principal -->
+<div>
+    <h3>¿Está seguro de borrar los datos del visitante?</h3>
+
+    <div>
+        <a asp-action="Index"> Volver a la lista </a>
+    </div>
+
+    <div>
+        <div>
+            Código: @Model.Codigo
+        </div>
+
+        <div>
+            Nombre: @Model.Nombre
+        </div>
+
+        <div>
+            Correo: @Model.Correo
+        </div>
+
+        <div>
+            Rol: @Model.Rol
+        </div>
+
+        <div>
+            <form asp-action="Borrar" method="POST">
+                <input type="hidden" asp-for="Codigo" />
+                <input type="submit" class="estiloBtn" value="Borrar" />
+            </form>
+            @Html.ActionLink("Borrar", "Borrar", new {id = Model.Codigo})
+        </div>
+
+
+    </div>
+</div>

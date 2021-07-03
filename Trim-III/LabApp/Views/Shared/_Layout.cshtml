@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Laboratorio Mi Mundo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/estilos.css" />
+</head>
+
+<body class="estilo-body">
+    <header>
+        <nav>
+            <ul class="estilo-ul">
+                <div>
+                    <img class="img-logo" src="~/imgs/laboratory-04.jpg" alt="Logo de la empresa" />
+                </div>
+                <li class="estilo-nav"><a asp-controller="Inicio" asp-action="Index"> Inicio</a> </li>
+                <li class="estilo-nav"><a asp-controller="Nosotros" asp-action="Index"> Nosotros </a></li>
+
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li class="estilo-nav"> <a asp-controller="Auth" asp-action="Login">Iniciar sesión</a></li>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="estilo-nav"> <a asp-controller="Auth" asp-action="Cuenta">Cuenta</a></li>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="estilo-nav"> <a asp-controller="Auth" asp-action="SalirSesion">Cerrar sesión</a></li>
+                }
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div>
+            <img class="img-logo" src="~/imgs/laboratory-04.jpg" alt="Logo de la empresa" />
+        </div>
+        <div>
+            <nav>
+                <ul class="ul">
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
