@@ -117,9 +117,10 @@ El proyecto "LabApp" tiene las referencias de paquete siguientes
    > X.PagedList.Mvc.Core                                      8.0.7        8.0.7
 ```
 
-Claramente no todos tiene esa finalidad, los dos últimos son para mostrar un lista entre varias páginas. Luego se usa el siguiente comando para importar todas las tablas:
+Claramente no todos tienen esa finalidad, los dos últimos son para mostrar un lista entre varias páginas. Para instalar cada paquete hay que ir a [NuGet](https://www.nuget.org/), buscar la versión que se necesita y pegar el comando en la terminal. Luego se usa el siguiente comando para importar todas las tablas:
 
 ```bash
 dotnet ef dbcontext scaffold "Server=localhost;Database=lab_mundo;User=miusuario;Password=micontraseña" "Pomelo.EntityFrameworkCore.MySql" -o Models
 ```
 
+El resultado aparece en la carpeta `Models`.
