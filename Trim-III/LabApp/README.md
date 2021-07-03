@@ -1,3 +1,9 @@
+---
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
+
 # **Programa CRUD hecho en `C#`**
 
 Esta aplicación hecha es `C#` es un CRUD (*create*, *read*, *update* y *delete*), es decir, tiene la función de conectarse a una base de datos y hacer varias operaciones en esa base, con una interfaz mediante una página web. Para este programa, la conexión es a una base de datos creada en MySQL (mediante el archivo `creacion-lab-mundo.sql`).
@@ -15,7 +21,7 @@ Este programa fue hecho en .NET 5.0, así que si se está usando otra versión d
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
@@ -49,7 +55,7 @@ El primer paso es crear una página web sencilla con las páginas que uno crea q
 
 ## **Mockup de HTML**
 
-El boceto se puede ver en la carpeta . Como se mencionó, esto sería el primer paso.
+El boceto se puede ver en la carpeta [LabMockup](https://github.com/rosgori/Sena-soluciones/tree/main/Trim-III/LabApp/LabMockup). Como se mencionó, esto sería el primer paso.
 
 ## **Árbol de navegación**
 
