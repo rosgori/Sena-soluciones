@@ -10,6 +10,7 @@ Esta aplicación hecha es `C#` es un CRUD (*create*, *read*, *update* y *delete*
 
 Este programa fue hecho en .NET 5.0, así que si se está usando otra versión de .NET, sólo hay que cambiar una línea de código en el archivo `LabApp.csproj` para que compile sin problemas. El contenido de este archivo es:
 
+ \small
 ```C#
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
@@ -36,6 +37,7 @@ Este programa fue hecho en .NET 5.0, así que si se está usando otra versión d
 
 </Project>
 ```
+\normalsize
 
 Nótese todos los paquetes usados en el programa. Para cambiar la versión de .NET, hay que cambiar una línea `<TargetFramework>net5.0</TargetFramework>` por la versión de .NET que quiera, por ejemplo, si es .NET 3.1 sería:
 
